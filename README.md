@@ -1,60 +1,49 @@
-# AutoFlow Automation Demo (GitHub Pages Ready)
+# OpsFlow Automation Console (GitHub Pages Static Prototype)
 
-A polished client-facing static demo for showcasing this workflow:
+A custom-built operations automation prototype designed for a **Make/Zapier Automation Specialist** to present client workflow logic.
 
-**Gmail → AI Parsing → Google Sheets → Calendar → Offers & Invoices**
+This demo is intentionally styled as an internal operations console (not a generic SaaS dashboard) and simulates:
 
-## What’s Included
-
-- Professional dashboard UI for client presentations
-- Editable **Automation Settings** page:
-  - Gmail label
-  - Google Sheet name
-  - Calendar reminder
-  - Invoice prefix
-  - Default status
-- Searchable tracker table with **CSV export**
-- Professional invoice preview panel
-- Error simulation for:
+- **Intake Inbox** (Gmail label: `Client Requests`)
+- **Parser Output**
+- **Project Tracker** (Sheet: `Project Milestones Tracker`)
+- **Calendar Queue** (Calendar: `Operations Calendar`)
+- **Offer / Invoice Draft** (prefix: `OFF-`)
+- **Automation Health** with error handling for:
   - Missing deadline
   - Missing budget
   - Invalid email
-- Make/Zapier-style workflow builder page
-- Guided demo mode with automatic step highlighting
-- 100% static frontend (no backend, API keys, or paid tools)
 
-## Local Usage
+## Feature Set
 
-Open `index.html` directly in your browser.
+- Left-side **workflow rail** with live step status
+- Guided demo mode
+- Before Automation vs After Automation comparison
+- Client Value section
+- CSV export from tracker table
+- Invoice draft preview
+- Pure HTML/CSS/JS (GitHub Pages compatible)
 
-(Optional) Serve locally:
+## Run Locally
+
+Open `index.html` in a browser.
+
+Optional local server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then browse to `http://localhost:8080`.
 
 ## Deploy to GitHub Pages
 
-1. Push this repository to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/ (root)**
-4. Save.
+1. Push repo to GitHub.
+2. Open **Settings → Pages**.
+3. Set source to **Deploy from a branch**.
+4. Use branch **main** and folder **/ (root)**.
+5. Save.
 
-Site URL format:
+Expected URL pattern:
 
 `https://<your-username>.github.io/autoflow-automation-demo/`
-
-## Demo Script (for Upwork calls)
-
-1. Click **Start Guided Demo**.
-2. Show incoming email sample and click **Run Automation**.
-3. Open **Tracker** and export CSV.
-4. Open **Automation Settings** and edit values.
-5. Open **Invoice Preview** and show generated draft.
-6. Trigger each **Error Handling Simulation** case.
-7. Open **Workflow Builder** to explain Make/Zapier flow logic.

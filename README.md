@@ -1,57 +1,60 @@
-# AutoFlow Interactive Workflow Automation Demo
+# AutoFlow Automation Demo (GitHub Pages Ready)
 
-This is a client-facing demo simulation for an automation workflow:
+A polished client-facing static demo for showcasing this workflow:
 
-Gmail → AI Parsing → Google Sheets → Calendar → Offers & Invoices
+**Gmail → AI Parsing → Google Sheets → Calendar → Offers & Invoices**
 
-## Features
+## What’s Included
 
-- Clickable dashboard
-- Run Full Demo button
-- Sample Gmail request input
-- Simulated AI parser
-- Live Google Sheets tracker table
-- Calendar event cards
-- Invoice draft cards
-- Confirmation email preview
-- Activity log
-- Searchable tracker
+- Professional dashboard UI for client presentations
+- Editable **Automation Settings** page:
+  - Gmail label
+  - Google Sheet name
+  - Calendar reminder
+  - Invoice prefix
+  - Default status
+- Searchable tracker table with **CSV export**
+- Professional invoice preview panel
+- Error simulation for:
+  - Missing deadline
+  - Missing budget
+  - Invalid email
+- Make/Zapier-style workflow builder page
+- Guided demo mode with automatic step highlighting
+- 100% static frontend (no backend, API keys, or paid tools)
 
-## Deploy on GitHub Pages
+## Local Usage
 
-1. Create a new GitHub repository, for example:
-   `autoflow-automation-demo`
+Open `index.html` directly in your browser.
 
-2. Upload these files:
-   - `index.html`
-   - `style.css`
-   - `app.js`
-   - `README.md`
+(Optional) Serve locally:
 
-3. Go to repository **Settings**
+```bash
+python3 -m http.server 8080
+```
 
-4. Go to **Pages**
+Then open `http://localhost:8080`.
 
-5. Under **Build and deployment**, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
+## Deploy to GitHub Pages
 
-6. Save.
+1. Push this repository to GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**:
+   - Source: **Deploy from a branch**
+   - Branch: **main**
+   - Folder: **/ (root)**
+4. Save.
 
-Your demo link will look like:
+Site URL format:
 
-`https://YOUR_USERNAME.github.io/autoflow-automation-demo/`
+`https://<your-username>.github.io/autoflow-automation-demo/`
 
-## Client Message
+## Demo Script (for Upwork calls)
 
-Hi,
-
-I created an interactive demo that shows how your workflow can be automated.
-
-The demo simulates an incoming Gmail request, extracts the key project details, adds the request to a tracker, creates a calendar event, generates an invoice draft, and prepares a confirmation email.
-
-This is a frontend simulation, but the same flow can be connected to real Gmail, Google Sheets, Google Calendar, Make/Zapier, and invoice tools for production.
-
-Best,
-Jawad
+1. Click **Start Guided Demo**.
+2. Show incoming email sample and click **Run Automation**.
+3. Open **Tracker** and export CSV.
+4. Open **Automation Settings** and edit values.
+5. Open **Invoice Preview** and show generated draft.
+6. Trigger each **Error Handling Simulation** case.
+7. Open **Workflow Builder** to explain Make/Zapier flow logic.

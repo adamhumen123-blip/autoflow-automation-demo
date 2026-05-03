@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoFlow | Workflow Automation Demo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><div class="brand-icon">⚡</div><span>AutoFlow</span></div>
+    <nav>
+      <button class="nav active" data-page="dashboard">🏠 Dashboard</button>
+      <button class="nav" data-page="workflow">🔗 Workflow</button>
+      <button class="nav" data-page="tracker">📋 Tracker</button>
+      <button class="nav" data-page="calendar">📅 Calendar</button>
+      <button class="nav" data-page="invoices">🧾 Invoices</button>
+      <button class="nav" data-page="emails">✉️ Emails</button>
+    </nav>
+    <div class="system-card">
+      <div class="mini-chart"></div>
+      <strong>Automation Health</strong>
+      <p>All connected workflows are running smoothly.</p>
+      <span class="ok">✓ Operational</span>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>Workflow Automation Demo</h1>
+        <p>Gmail → AI Parsing → Google Sheets → Calendar → Offers & Invoices</p>
+      </div>
+      <div class="profile"><span class="bell">🔔</span><span class="avatar">👤</span><strong>Demo User</strong></div>
+    </header>
+
+    <section class="panel dashboard active" id="dashboard">
+      <div class="hero">
+        <div>
+          <h2>Client Request Automation Simulation</h2>
+          <p>This clickable demo simulates how incoming Gmail requests are parsed, tracked in Sheets, scheduled in Calendar, converted into invoice drafts, and followed up by email.</p>
+        </div>
+        <button class="primary" id="runDemo">▶ Run Full Demo</button>
+      </div>
+
+      <div class="email-box">
+        <div class="email-head">
+          <h3>Incoming Gmail Request</h3>
+          <button class="ghost" id="loadRandom">Load Sample Request</button>
+        </div>
+        <textarea id="emailBody">Client Name: ABC Company
+Client Email: client@example.com
+Project: Website Automation
+Deadline: 15 May 2026
+Budget: $750
+Service: Workflow Automation</textarea>
+      </div>
+
+      <div class="workflow-steps">
+        <div class="step" id="step1"><span>1</span><div>✉️</div><h4>Gmail Trigger</h4><p>New request received</p></div>
+        <div class="arrow">→</div>
+        <div class="step" id="step2"><span>2</span><div>🤖</div><h4>AI Parser</h4><p>Extract key fields</p></div>
+        <div class="arrow">→</div>
+        <div class="step" id="step3"><span>3</span><div>📗</div><h4>Sheets Tracker</h4><p>Add project row</p></div>
+        <div class="arrow">→</div>
+        <div class="step" id="step4"><span>4</span><div>📅</div><h4>Calendar</h4><p>Create deadline event</p></div>
+        <div class="arrow">→</div>
+        <div class="step" id="step5"><span>5</span><div>🧾</div><h4>Invoice + Email</h4><p>Draft and confirm</p></div>
+      </div>
+
+      <div class="kpis">
+        <div class="card"><small>New Requests</small><strong id="kpiRequests">2</strong><span>↑ 20% last 7 days</span></div>
+        <div class="card"><small>Events Created</small><strong id="kpiEvents">1</strong><span>↑ 14% last 7 days</span></div>
+        <div class="card"><small>Invoices Drafted</small><strong id="kpiInvoices">1</strong><span>↑ 25% last 7 days</span></div>
+        <div class="card"><small>Status</small><strong class="green">Active</strong><span>Automation running</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="section-head">
+            <h3>Live Activity Log</h3>
+            <button class="ghost" id="resetDemo">Reset</button>
+          </div>
+          <div id="log" class="log"><div class="log-item">✓ Demo ready. Click Run Full Demo.</div></div>
+        </div>
+        <div class="card">
+          <h3>Confirmation Email Preview</h3>
+          <pre id="emailPreview">Confirmation email preview will appear here.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="workflow">
+      <h2>Automation Workflow</h2>
+      <div class="workflow-large">
+        <div><b>1. Gmail</b><p>Watch labeled inbox messages or new project requests.</p></div>
+        <div><b>2. Parser</b><p>Extract client, project, deadline, budget, and service.</p></div>
+        <div><b>3. Google Sheets</b><p>Add clean rows to the project tracker.</p></div>
+        <div><b>4. Calendar</b><p>Create deadline events and reminders.</p></div>
+        <div><b>5. Offers & Invoices</b><p>Create invoice draft and send confirmation.</p></div>
+      </div>
+    </section>
+
+    <section class="panel" id="tracker">
+      <div class="section-head">
+        <h2>Automation Demo Tracker</h2>
+        <input id="searchTracker" placeholder="Search tracker..."/>
+      </div>
+      <table>
+        <thead><tr><th>Date</th><th>Client</th><th>Project</th><th>Service</th><th>Deadline</th><th>Budget</th><th>Status</th></tr></thead>
+        <tbody id="trackerRows"></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="calendar">
+      <h2>Calendar Events</h2>
+      <div id="calendarCards" class="cards"></div>
+    </section>
+
+    <section class="panel" id="invoices">
+      <h2>Offer / Invoice Drafts</h2>
+      <div id="invoiceCards" class="cards"></div>
+    </section>
+
+    <section class="panel" id="emails">
+      <h2>Sent / Drafted Emails</h2>
+      <div id="emailCards" class="cards"></div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast">Automation completed successfully</div>
+<script src="app.js"></script>
+</body>
+</html>

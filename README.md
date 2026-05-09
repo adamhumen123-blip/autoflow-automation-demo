@@ -1,32 +1,42 @@
-# OpsFlow Automation Console (GitHub Pages Static Prototype)
+# Gmail Subject Email Extractor (Static Demo)
 
-A custom-built operations automation prototype designed for a **Make/Zapier Automation Specialist** to present client workflow logic.
+A polished front-end demo tailored for an Upwork automation job focused on **extracting email addresses from Gmail subject lines**.
 
-This demo is intentionally styled as an internal operations console (not a generic SaaS dashboard) and simulates:
+This project is intentionally static (HTML/CSS/JS only) and simulates a Gmail-to-Sheets extraction workflow without backend integrations.
 
-- **Intake Inbox** (Gmail label: `Client Requests`)
-- **Parser Output**
-- **Project Tracker** (Sheet: `Project Milestones Tracker`)
-- **Calendar Queue** (Calendar: `Operations Calendar`)
-- **Offer / Invoice Draft** (prefix: `OFF-`)
-- **Automation Health** with error handling for:
-  - Missing deadline
-  - Missing budget
-  - Invalid email
+## Demo Positioning
 
-## Feature Set
+**Gmail Subject Email Extractor**
 
-- Left-side **workflow rail** with live step status
-- Guided demo mode
-- Before Automation vs After Automation comparison
-- Client Value section
-- CSV export from tracker table
-- Invoice draft preview
-- Pure HTML/CSS/JS (GitHub Pages compatible)
+Automated Gmail workflow for scanning subject lines, extracting email addresses, removing duplicates, and exporting clean results to Google Sheets.
+
+## Included Workflow Steps
+
+1. Gmail Search
+2. Subject Scanner
+3. Regex Email Extractor
+4. Duplicate Cleaner
+5. Google Sheets Export
+6. Automation Health
+
+## What the Demo Shows
+
+- Sample Gmail subject lines (including Etsy confirmation examples)
+- Regex-based email extraction from subject text
+- Order ID capture from subject lines
+- Duplicate removal logic for cleaner exports
+- Output table with columns:
+  - Date
+  - Extracted Email
+  - Subject
+  - Order ID
+  - Status
+- CSV export preview suitable for Google Sheets upload
+- Batch-processing framing with resume cursor messaging to avoid timeout issues
 
 ## Run Locally
 
-Open `index.html` in a browser.
+Open `index.html` in your browser.
 
 Optional local server:
 
@@ -34,16 +44,9 @@ Optional local server:
 python3 -m http.server 8080
 ```
 
-Then browse to `http://localhost:8080`.
+Then visit `http://localhost:8080`.
 
-## Deploy to GitHub Pages
+## Notes
 
-1. Push repo to GitHub.
-2. Open **Settings → Pages**.
-3. Set source to **Deploy from a branch**.
-4. Use branch **main** and folder **/ (root)**.
-5. Save.
-
-Expected URL pattern:
-
-`https://<your-username>.github.io/autoflow-automation-demo/`
+- No backend functionality is included.
+- This is a front-end demo for showcasing workflow logic and UI presentation.

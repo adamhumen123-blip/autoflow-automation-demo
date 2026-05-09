@@ -1,16 +1,20 @@
 # Gmail Subject Email Extractor (Static Demo)
 
-A polished front-end demo tailored for an Upwork automation job focused on **extracting email addresses from Gmail subject lines**.
+A polished front-end demo tailored for an automation job focused on **extracting email addresses from Gmail subject lines**.
 
 This project is intentionally static (HTML/CSS/JS only) and simulates a Gmail-to-Sheets extraction workflow without backend integrations.
 
 ## Demo Positioning
 
-**Gmail Subject Email Extractor**
+**Title**
+
+Gmail Subject Email Extractor
+
+**Subtitle**
 
 Automated Gmail workflow for scanning subject lines, extracting email addresses, removing duplicates, and exporting clean results to Google Sheets.
 
-## Included Workflow Steps
+## Included Workflow Rail
 
 1. Gmail Search
 2. Subject Scanner
@@ -19,20 +23,28 @@ Automated Gmail workflow for scanning subject lines, extracting email addresses,
 5. Google Sheets Export
 6. Automation Health
 
-## What the Demo Shows
+## Sample Subject Lines Included
 
-- Sample Gmail subject lines (including Etsy confirmation examples)
-- Regex-based email extraction from subject text
-- Order ID capture from subject lines
-- Duplicate removal logic for cleaner exports
-- Output table with columns:
-  - Date
-  - Extracted Email
-  - Subject
-  - Order ID
-  - Status
-- CSV export preview suitable for Google Sheets upload
-- Batch-processing framing with resume cursor messaging to avoid timeout issues
+- Etsy Confirmación de pedido por: 3,74 € de: choco-boubou@hotmail.fr (4052703070)
+- Etsy Confirmación de pedido por: 3,71 € de: karin.vandermost@web.de (4052663706)
+- Etsy Confirmación de pedido por: 3,71 € de: jenny.radeck@web.de (405719139)
+
+## Output Table Columns
+
+- Date
+- Extracted Email
+- Subject
+- Order ID
+- Status
+
+## Workflow Explanation Included in Demo
+
+- Batch processing for 300,000+ Gmail messages
+- Gmail search filters
+- Regex extraction from subject lines
+- Duplicate removal
+- Google Sheets export
+- Resume from last processed batch to avoid Apps Script timeouts
 
 ## Run Locally
 

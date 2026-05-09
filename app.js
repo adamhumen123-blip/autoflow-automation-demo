@@ -37,7 +37,7 @@ function renderTracker(filter = '') {
   const list = state.tracker.filter(r => Object.values(r).join(' ').toLowerCase().includes(filter.toLowerCase()));
   $('trackerRows').innerHTML = list.map(r => `<tr><td>${r.date}</td><td>${r.extractedEmail}</td><td>${r.subject}</td><td>${r.orderId}</td><td>${r.status}</td></tr>`).join('');
 }
-function renderHealth() { $('calendarQueue').innerHTML = state.health.map(h => `<li>${h}</li>`).join(''); }
+function renderHealth() { $('healthQueue').innerHTML = state.health.map(h => `<li>${h}</li>`).join(''); }
 function flowActive(step) { for (let i = 1; i <= 6; i++) { $(`flow-${i}`).classList.remove('active'); if (i < step) $(`flow-${i}`).classList.add('complete'); if (i === step) $(`flow-${i}`).classList.add('active'); } }
 function setMeta() { $('labelDisplay').textContent = state.settings.label; $('sheetDisplay').textContent = state.settings.sheet; }
 
@@ -90,7 +90,7 @@ function exportCsv() {
 }
 
 async function guided() {
-  const ids = ['guide-intake', 'guide-parser', 'guide-tracker', 'guide-calendar', 'guide-health', 'guide-rail'];
+  const ids = ['guide-intake', 'guide-parser', 'guide-sheet-export', 'guide-health-monitor', 'guide-health', 'guide-rail'];
   for (const id of ids) {
     document.querySelectorAll('.guide-highlight').forEach(x => x.classList.remove('guide-highlight'));
     $(id).classList.add('guide-highlight');

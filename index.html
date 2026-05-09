@@ -1,126 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OpsFlow Automation Console</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gmail Subject Extraction Demo</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="shell">
-  <aside class="rail">
-    <div class="brand">
-      <p class="eyebrow">Internal prototype</p>
-      <h1>OpsFlow<br/>Automation Console</h1>
-      <p class="sub">Turn scattered client requests into launch-ready projects in minutes.</p>
-    </div>
-
-    <div class="live-flow" id="guide-rail">
-      <h2>Workflow Rail</h2>
-      <ul>
-        <li class="flow-step" id="flow-1"><span>1</span> Intake Inbox</li>
-        <li class="flow-step" id="flow-2"><span>2</span> Parser Output</li>
-        <li class="flow-step" id="flow-3"><span>3</span> Project Tracker</li>
-        <li class="flow-step" id="flow-4"><span>4</span> Calendar Queue</li>
-        <li class="flow-step" id="flow-5"><span>5</span> Offer / Invoice Draft</li>
-        <li class="flow-step" id="flow-6"><span>6</span> Automation Health</li>
-      </ul>
-      <button class="btn muted" id="startGuide">Start guided demo mode</button>
-    </div>
-  </aside>
-
-  <main>
-    <header class="top">
+  <div class="app">
+    <header class="topbar">
       <div>
-        <h2>From request to ready-to-execute in one automated flow</h2>
-        <p>Built to mirror a real client stack across Gmail, Sheets, Calendar, and quoting—without manual handoffs.</p>
+        <h1>Gmail Subject Extraction Demo</h1>
+        <p>Focused simulation for extracting structured fields from Gmail email subjects.</p>
       </div>
-      <div class="top-actions">
-        <button class="btn primary" id="runDemo">Run automation</button>
-        <button class="btn muted" id="resetDemo">Reset simulation</button>
+      <div class="actions">
+        <button class="btn primary" id="runDemo">Run extraction</button>
+        <button class="btn" id="resetDemo">Reset</button>
       </div>
     </header>
 
-    <section class="grid-two">
+    <section class="cards grid2">
       <article class="card" id="guide-intake">
-        <div class="head"><h3>Intake Inbox</h3><small>Gmail label: <b id="labelDisplay">Client Requests</b></small></div>
-        <textarea id="emailBody">Client Name: Northline Interiors
-Client Email: ops@northlineinteriors.com
-Project: Lead-to-Project Intake Automation
-Deadline: 18 May 2026
-Budget: $1,850
-Service: Make.com + Zapier build</textarea>
-        <div class="inline-actions"><button class="btn muted" id="loadRandom">Load sample intake</button></div>
+        <div class="head"><h3>Gmail Inbox</h3><small>Label: <b id="labelDisplay">Client Requests</b></small></div>
+        <textarea id="emailBody">Subject: Client Name=Northline Interiors | Client Email=ops@northlineinteriors.com | Project=Office Renovation Intake
+Body: Please process this request.</textarea>
+        <div class="row">
+          <button class="btn" id="loadRandom">Load sample</button>
+        </div>
       </article>
 
       <article class="card" id="guide-parser">
-        <div class="head"><h3>Parser Output</h3><small>Field extraction + validation</small></div>
-        <pre id="parserOutput">Run automation to parse intake fields.</pre>
-        <div class="error-actions">
-          <button class="btn muted error-test" data-case="deadline">Missing deadline</button>
-          <button class="btn muted error-test" data-case="budget">Missing budget</button>
-          <button class="btn muted error-test" data-case="email">Invalid email</button>
-        </div>
-      </article>
-    </section>
-
-    <section class="grid-two">
-      <article class="card" id="guide-tracker">
-        <div class="head">
-          <h3>Project Tracker</h3>
-          <small>Sheet: <b id="sheetDisplay">Project Milestones Tracker</b></small>
-        </div>
-        <div class="inline-actions">
-          <input id="searchTracker" placeholder="Search client, service, status..."/>
-          <button class="btn muted" id="exportCsv">Export CSV</button>
-        </div>
-        <table>
-          <thead><tr><th>Date</th><th>Client</th><th>Project</th><th>Deadline</th><th>Budget</th><th>Status</th></tr></thead>
-          <tbody id="trackerRows"></tbody>
-        </table>
-      </article>
-
-      <article class="card" id="guide-calendar">
-        <div class="head"><h3>Calendar Queue</h3><small>Calendar: <b id="calendarDisplay">Operations Calendar</b></small></div>
-        <ul id="calendarQueue" class="queue"></ul>
-      </article>
-    </section>
-
-    <section class="grid-two">
-      <article class="card" id="guide-invoice">
-        <div class="head"><h3>Offer / Invoice Draft</h3><small>Invoice prefix: <b id="prefixDisplay">OFF-</b></small></div>
-        <div id="invoicePreview" class="invoice"></div>
+        <div class="head"><h3>Extraction Output</h3><small>Parsed from subject line</small></div>
+        <pre id="parserOutput">Run extraction to parse subject fields.</pre>
       </article>
 
       <article class="card" id="guide-health">
-        <div class="head"><h3>Automation Health</h3><small>Validation + run log</small></div>
-        <div id="log" class="log"><div class="log-line">✓ Console ready for demo run.</div></div>
-        <pre id="errorOutput">Error handling watchlist: Missing deadline, missing budget, invalid email.</pre>
-      </article>
-    </section>
-
-    <section class="grid-two">
-      <article class="card">
-        <h3>Before Automation vs After Automation</h3>
-        <div class="compare">
-          <div><h4>Before</h4><ul><li>Manual inbox triage</li><li>Copy/paste into trackers</li><li>Reminders set after delays</li><li>Quotes built from scratch</li></ul></div>
-          <div><h4>After</h4><ul><li>Requests routed instantly by label</li><li>Structured data lands in Sheets automatically</li><li>Calendar tasks queued at intake time</li><li>Offer/invoice drafts generated in seconds</li></ul></div>
+        <div class="head"><h3>Validation</h3><small>Field checks</small></div>
+        <div class="btns">
+          <button class="btn muted error-test" data-case="email">Invalid email</button>
+          <button class="btn muted error-test" data-case="subject">Missing subject</button>
+          <button class="btn muted error-test" data-case="client">Missing client name</button>
         </div>
+        <pre id="errorOutput">Validation watchlist: missing subject, missing client name, invalid email.</pre>
       </article>
 
-      <article class="card">
-        <h3>Client Value</h3>
-        <ul class="value-list">
-          <li>Save 6–10 admin hours per week</li>
-          <li>Respond to leads faster with less context switching</li>
-          <li>Keep one reliable source of project truth</li>
-          <li>Reduce deadline misses and revenue leakage</li>
-        </ul>
+      <article class="card" id="guide-rail">
+        <div class="head"><h3>Run Log</h3><small>Simulation events</small></div>
+        <div id="log" class="log"></div>
       </article>
     </section>
-  </main>
-</div>
-<div class="toast" id="toast"></div>
-<script src="app.js"></script>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

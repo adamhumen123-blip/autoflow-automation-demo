@@ -58,7 +58,7 @@ Etsy Confirmación de pedido por: 3,71 € de: karin.vandermost@web.de (40526637
     </section>
 
     <section class="grid-two">
-      <article class="card" id="guide-tracker">
+      <article class="card" id="guide-sheet-export">
         <div class="head">
           <h3>Google Sheets Export Preview</h3>
           <small>Sheet: <b id="sheetDisplay">Gmail Subject Email Extracts</b></small>
@@ -73,9 +73,9 @@ Etsy Confirmación de pedido por: 3,71 € de: karin.vandermost@web.de (40526637
         </table>
       </article>
 
-      <article class="card" id="guide-calendar">
+      <article class="card" id="guide-health-monitor">
         <div class="head"><h3>Automation Health</h3><small>Batch run diagnostics</small></div>
-        <ul id="calendarQueue" class="queue"></ul>
+        <ul id="healthQueue" class="queue"></ul>
       </article>
     </section>
 
@@ -89,12 +89,12 @@ Etsy Confirmación de pedido por: 3,71 € de: karin.vandermost@web.de (40526637
       <article class="card">
         <h3>How this workflow works</h3>
         <ul class="value-list">
-          <li>Processes large Gmail inboxes in batches</li>
-          <li>Uses Gmail search filters to target matching threads</li>
-          <li>Extracts emails from subject lines using regex</li>
-          <li>Removes duplicates before export</li>
-          <li>Exports cleaned rows to Google Sheets</li>
-          <li>Can resume from last processed batch to avoid timeout issues</li>
+          <li>Batch processing for 300,000+ Gmail messages</li>
+          <li>Gmail search filters to target matching messages</li>
+          <li>Regex extraction from subject lines to capture email addresses</li>
+          <li>Duplicate removal for clean, unique output</li>
+          <li>Google Sheets export-ready data for downstream automation</li>
+          <li>Resume from last processed batch to avoid Apps Script timeouts</li>
         </ul>
       </article>
     </section>
